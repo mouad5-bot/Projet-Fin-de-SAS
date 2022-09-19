@@ -1,7 +1,8 @@
-typedef struct
-{
+typedef struct{
+
     int codeProduit, quantiteProduit;
-    float prixProduit;
-    char nomProduit[30];
+    float prixProduit, prixTTC;
+    char nomProduit[30], dateDachat[15];
+
 }addProduct;
 

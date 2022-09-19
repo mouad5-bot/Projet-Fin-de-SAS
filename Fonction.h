@@ -1,32 +1,87 @@
 
-    addProduct TableGeneral[150];
-    int incrementation=0;
+    addProduct tableGeneral[150];
+    int incrementer=0;
 
+    void ajouterProduit(){
 
-    void ajouterProduit()
-    {       addProduct produit;
-            printf("entrer le code de produit : ");
+            addProduct produit;
+
+            printf("\n");
+            printf("\t\t entrer le code de produit : ");
             scanf("%d", &produit.codeProduit);
 
-            printf("entrer le nom de produit : ");
+            printf("\t\ tentrer le nom de produit : ");
             scanf("%s", produit.nomProduit);
 
-            printf("entrer la qualite de produit : ");
+            printf("\t\t entrer la quantite de produit : ");
             scanf("%d", &produit.quantiteProduit);
 
-            printf("entrer le prix de produit : ");
+            printf("\t\t entrer le prix de produit : ");
             scanf("%f", &produit.prixProduit);
-            TableGeneral[incrementation++] = produit;
+
+            tableGeneral[incrementer++] = produit;
     }
-    void ajouterPlusieursProduits()
-    {
+
+    void ajouterPlusieursProduits(){
         int np;
-        printf("Combien de produits souhaitez-vous ?");
-        scanf("%d", &np);
+            printf("Combien de produits souhaitez-vous ?");
+            scanf("%d", &np);
         while(np--) ajouterProduit();
     }
 
+    void ordreAlphabetiqueCroissant(){
 
+     //my instructions
+    }
+
+
+    void orderDecroissantPrix(){
+
+        addProduct table;
+        int i, j, k;
+
+        for (i = 0; i < incrementer; i++)
+            {
+                for (j = 0; j <= incrementer - i - 1; j++)
+                {
+                    if (tableGeneral[j].prixProduit < tableGeneral[j + 1].prixProduit)
+
+                    {
+                        table = tableGeneral[j];
+
+                        tableGeneral[j] = tableGeneral[j + 1];
+
+                        tableGeneral[j + 1] = table;
+                    }
+                }
+            }
+        printf("les produits entrant sont :");
+        for (k = 0; k < incrementer; k++){
+
+            printf("le code est : %d ||| ", tableGeneral[k].codeProduit);
+            printf("le nom est : %s ||| ", tableGeneral[k].nomProduit);
+            printf("le prix est :  %.3f |||", tableGeneral[k].nomProduit);
+            printf("le prixTTC est : %.4f ||| ", tableGeneral[k].prixTTC);
+        }
+     }
+
+
+    void retourAuMenu(){
+        int m;
+        do {
+        printf("\n \t\tPour Retour au menu principal appuyez sur 1.\n   \t\tPour Quittez le programme appuyez sur 2.\n");
+        scanf("%d", &m);
+        }while(m != 1 || m != 2);
+        switch (m)
+        {
+        case 1:
+            main();
+            break;
+
+        default:
+            printf("Vous avez quitter !!");
+        }
+   }
 
 
     void Menu(){
@@ -43,10 +98,10 @@
             printf("\t\t7. Supprimer un Produit \n");
             printf("\t\t8. Statistique de vente \n");
             scanf("%d", &num);
-        }while (num > 8 || num <0);
+        }while (num > 8 || num < 0);
             switch (num)
             {
-                case 1 :
+                case 1 : //ajouter un  ou plusieurs  produit
 
                     do{
                     printf("\n\t\t1. Ajouter un nouveau produit :");
@@ -55,15 +110,17 @@
                     }while(n1 < 0 || n1 > 3);
                         switch(n1)
                         {
-                        case 1 ://ajouuter un seul  produit
+                        case 1 ://ajouter un seul  produit
                             ajouterProduit();
+                            retourAuMenu();
                             break;
 
                         case 2 : //ajouter plusiers produits
                             ajouterPlusieursProduits();
-                            break;
+                            retourAuMenu();
+                           break;
                         }
-
+                    retourAuMenu();
                     break;
 
                 case 2 :     //  N.B :  chaque produit à un Prix TTC = Prix + 15% du prix
@@ -74,17 +131,18 @@
 
                          switch(n2){
                         case 1 :
-                            printf("\n\t\ttest1");
-                            //il faut crier un fonction Lister tous les produits
-                            //selon l’ordre alphabetique  croissant du nom
+                             ordreAlphabetiqueCroissant();
+                             retourAuMenu();
                             break;
                         case 2 :
-                              printf("\n\t\ttest2");
-                            //il faut crier un fonction pour lister tous les produits selon l’ordre  décroissant du prix.
+                             orderDecroissantPrix();
+                             retourAuMenu();
                             break;
                          }
                      }while(n2 < 1 || n2 > 2);
-                    break;
+
+                    retourAuMenu();
+                   break;
 
                 case 3 :   // N.B :Pour chaque produit acheté, vous devez enregistrer le prix TTC et la date d’achat.
 
