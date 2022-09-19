@@ -14,7 +14,7 @@ int main()
     printf("\n\n");
 
    // menuPharmacie();
-   Menu();
+    Menu();
 
 
     return 0;

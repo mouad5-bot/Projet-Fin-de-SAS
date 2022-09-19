@@ -1,6 +1,6 @@
 typedef struct
 {
-    int codeProduit, qualiteProduit;
+    int codeProduit, quantiteProduit;
     float prixProduit;
     char nomProduit[30];
 }addProduct;
