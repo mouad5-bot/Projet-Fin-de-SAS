@@ -24,9 +24,11 @@
 
                 case 2 :     //  N.B :  chaque produit à un Prix TTC = Prix + 15% du prix
                      ordreOfListe();
+                     retourAuMenu();
 
                 case 3 :   // N.B :Pour chaque produit acheté, vous devez enregistrer le prix TTC et la date d’achat.
-
+                    acheterProduit();
+                    retourAuMenu();
                     break;
 
                 case 4 :
@@ -46,27 +48,38 @@
                             //il faut maintenent faire un fonction qui fait la recherche par quantite
                             break;
                      }
+                     retourAuMenu();
                     break;
 
                 case 5 :
-                    //permet d’afficher les produits dont la quantité est inférieure à 3.
+                    //afficher les produits dont la quantité est inférieure à 3.
+                   // etatDuStock();
                     printf("\n\t\ttest");
 
+                    retourAuMenu();
                     break;
 
                 case 6 ://misea jour les quantites apres avoir recharger le stock
                     printf("\n\t\tfaire la mise a jour de stock");
+                    //AlimenterStock();
 
+                    retourAuMenu();
                     break;
 
                 case 7 : //supprimer les produits
                     printf("\n\t\t Supprimer les produits par: Code");
-
+                    //suppProduit();
+                    retourAuMenu();
                     break;
 
                 case 8 : //affichage
 
+                    //totalPrixProduit();
+                    //moyennePrixProduit();
+                    //MaxPrixProduit();
+                    //Min PrixProduit();
 
+                    retourAuMenu();
                     break;
             }
        }
@@ -79,7 +92,7 @@
         do {
             printf("\n \t\tPour Retour au menu principal appuyez sur 1\n   \t\tPour Quittez le programme appuyez sur 2\n");
             scanf("%d", &m);
-        }while(m > 0  || m < 3);
+        }while(m == 1  || m == 2);
 
             switch (m){
 

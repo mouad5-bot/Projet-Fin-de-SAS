@@ -14,12 +14,13 @@
         switch(n1){
 
             case 1 ://ajouter un seul  produit
-                retourAuMenu();
                 ajouterProduit();
+
                break;
+
             case 2 : //ajouter plusiers produits
-                retourAuMenu();
                 ajouterPlusieursProduits();
+
                break;
             }
     }
@@ -52,7 +53,7 @@
             scanf("%d", &np);
         while(np--) ajouterProduit();
     }
-//---------------------Lister produits--------------------------------
+//------------------------------ Lister produits --------------------------------
 
 
     void ordreOfListe(){
@@ -65,18 +66,15 @@
 
         switch(n2){
             case 1 :
-                retourAuMenu();
                 ordreAlphabetiqueCroissant();
+
 
                 break;
             case 2 :
                  orderDecroissantPrix();
-                 retourAuMenu();
+
                 break;
              }
-
-
-       retourAuMenu();
     }
 
 
@@ -117,9 +115,11 @@
      }
 
 
+//--------------------------- Acheter produit ----------------------------------------
 
+void acheterProduit() {
 
-
+}
 
 
 
