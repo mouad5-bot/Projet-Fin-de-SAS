@@ -1,17 +1,19 @@
 
+    void retourAuMenu();
+
     void Menu(){
         int num;
         int  n3;
         do{
             printf("veuiller choisi un nombre dans ce menu :\n\n");
-            printf("\t\t1. Ajouter un Produit \n");
-            printf("\t\t2. Lister un Produit \n");
-            printf("\t\t3. Acheter un Produit \n");
-            printf("\t\t4. Rechercher un Produit \n");
-            printf("\t\t5. Etat de Stock \n");
-            printf("\t\t6. Alimenter de stock \n");
-            printf("\t\t7. Supprimer un Produit \n");
-            printf("\t\t8. Statistique de vente \n");
+            printf("\t\t 1. Ajouter un Produit \n");
+            printf("\t\t 2. Lister un Produit \n");
+            printf("\t\t 3. Acheter un Produit \n");
+            printf("\t\t 4. Rechercher un Produit \n");
+            printf("\t\t 5. Etat de Stock \n");
+            printf("\t\t 6. Alimenter de stock \n");
+            printf("\t\t 7. Supprimer un Produit \n");
+            printf("\t\t 8. Statistique de vente \n");
             scanf("%d", &num);
         }while (num > 8 || num < 0);
             switch (num)
@@ -92,7 +94,7 @@
         do {
             printf("\n \t\tPour Retour au menu principal appuyez sur 1\n   \t\tPour Quittez le programme appuyez sur 2\n");
             scanf("%d", &m);
-        }while(m == 1  || m == 2);
+        }while(m <=1 && m > 3);
 
             switch (m){
 
@@ -100,7 +102,10 @@
                     Menu();
                     break;
 
-                case 2:
+               /* case 2:
+                    printf("Vous avez quitter !!");
+                    break;*/
+                default :
                     printf("Vous avez quitter !!");
                     break;
             }

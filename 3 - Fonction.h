@@ -55,29 +55,6 @@
     }
 //------------------------------ Lister produits --------------------------------
 
-
-    void ordreOfListe(){
-        int n2;
-        do{
-            printf("\n\t\t1. Lister tous les produits selon ordre alphabetique  croissant du nom :");
-            printf("\n\t\t2. Lister tous les produits selon ordre  decroissant du prix :\n");
-            scanf("%d", &n2);
-        }while(n2 < 1 || n2 > 2);
-
-        switch(n2){
-            case 1 :
-                ordreAlphabetiqueCroissant();
-
-
-                break;
-            case 2 :
-                 orderDecroissantPrix();
-
-                break;
-             }
-    }
-
-
     void ordreAlphabetiqueCroissant(){
 
      //my instructions
@@ -104,22 +81,82 @@
                     }
                 }
             }
-        printf("les produits entrant sont :");
+
+        printf("les produits entrant sont :\n ");
         for (k = 0; k < incrementer; k++){
 
-            printf("le code est : %d ||| ", tableGeneral[k].codeProduit);
-            printf("le nom est : %s ||| ", tableGeneral[k].nomProduit);
-            printf("le prix est :  %.3f |||", tableGeneral[k].nomProduit);
-            printf("le prixTTC est : %.4f ||| ", tableGeneral[k].prixTTC);
+
+
+            printf("\t le prix est :  %.3f DH \t|||", tableGeneral[k].prixProduit);
+            printf("\t le code est : %d    \t|||", tableGeneral[k].codeProduit);
+            printf("\t le nom est : %s     \t|||", tableGeneral[k].nomProduit);
+            printf("\t le prixTTC est : %.4f DH\n" , tableGeneral[k].prixTTC);
+            tableGeneral[k].prixTTC = ( tableGeneral[k].prixProduit * 15 )/ 100;
         }
      }
 
 
-//--------------------------- Acheter produit ----------------------------------------
+    void ordreOfListe(){
+        int n2;
+        do{
+            printf("\n\t\t1. Lister tous les produits selon ordre alphabetique  croissant du nom :");
+            printf("\n\t\t2. Lister tous les produits selon ordre  decroissant du prix :\n");
+            scanf("%d", &n2);
+        }while(n2 < 1 || n2 > 2);
 
-void acheterProduit() {
+        switch(n2){
+            case 1 :
+                ordreAlphabetiqueCroissant();
 
+
+                break;
+            case 2 :
+                 orderDecroissantPrix();
+
+                break;
+            default :
+
+                break;
+             }
+    }
+
+//--------------------------- Acheter produit --------------------------------------
+
+void acheterProduit(int quantiteProduit, int codeProduit) {
+    int a = 0;
+
+     for (int i=0; i<quantiteProduit; i++){
+        if(tableGeneral[i].codeProduit = codeProduit)
+            a++;
+        if( a >= quantiteProduit )
+            printf("voila le nomber des prduits de ce code: %d ", a);
+     }
 }
+
+//---------------------------- Rechercher les produits -------------------------------
+void rechercherPrduit()
+{
+    int b, code, quan;
+    printf("Pour rechercher des  produits par code, appuyer sur 1 \n  Pour rechercher des produits par quantite, appuyez sur 2 \n");
+    scanf("%d", &b);
+    switch (b)
+    {
+    case 1:
+        printf("Entrez le code produit :\n");
+        scanf("  %d", &code);
+
+
+        break;
+    case 2:
+        printf("Entrez la quantite de produit :\n");
+        scanf("  %d", &quan);
+
+
+    default:
+        break;
+    }
+}
+
 
 
 
