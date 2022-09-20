@@ -85,13 +85,13 @@
         printf("les produits entrant sont :\n ");
         for (k = 0; k < incrementer; k++){
 
-
-
             printf("\t le prix est :  %.3f DH \t|||", tableGeneral[k].prixProduit);
-            printf("\t le code est : %d    \t|||", tableGeneral[k].codeProduit);
-            printf("\t le nom est : %s     \t|||", tableGeneral[k].nomProduit);
-            printf("\t le prixTTC est : %.4f DH\n" , tableGeneral[k].prixTTC);
-            tableGeneral[k].prixTTC = ( tableGeneral[k].prixProduit * 15 )/ 100;
+            printf("\t le code est :  %d      \t|||", tableGeneral[k].codeProduit);
+            printf("\t le nom  est :  %s      \t|||", tableGeneral[k].nomProduit );
+            printf("\t le prixTTC est : %.4f DH\n  ", tableGeneral[k].prixTTC    );
+
+            tableGeneral[k].prixTTC = ( tableGeneral[k].prixProduit * 15 )/ 100;  //??elle ne pas foctionne
+
         }
      }
 
@@ -122,46 +122,61 @@
 
 //--------------------------- Acheter produit --------------------------------------
 
-void acheterProduit(int quantiteProduit, int codeProduit) {
-    int a = 0;
+    void acheterProduit(int quantiteProduit, int codeProduit) {
+        int a = 0;
 
-     for (int i=0; i<quantiteProduit; i++){
-        if(tableGeneral[i].codeProduit = codeProduit)
-            a++;
-        if( a >= quantiteProduit )
-            printf("voila le nomber des prduits de ce code: %d ", a);
-     }
-}
+         for (int i=0; i<quantiteProduit; i++){
+            if(tableGeneral[i].codeProduit = codeProduit)
+                a++;
+            if( a >= quantiteProduit )
+                printf("voila le nomber des prduits de ce code: %d ", a);
+         }
+    }
 
 //---------------------------- Rechercher les produits -------------------------------
-void rechercherPrduit()
-{
-    int b, code, quan;
-    printf("Pour rechercher des  produits par code, appuyer sur 1 \n  Pour rechercher des produits par quantite, appuyez sur 2 \n");
-    scanf("%d", &b);
-    switch (b)
-    {
-    case 1:
-        printf("Entrez le code produit :\n");
-        scanf("  %d", &code);
+    void rechercherPrduit(){
+        int n3;
 
+     do{
+        printf("\n\t\tRechercher les produits Par :  \n\n\t\t1. Code\n\t\t2. Quantite\n");
+        scanf("%d", &n3);
+        }while(n3 < 0 || n3 > 3);
 
-        break;
-    case 2:
-        printf("Entrez la quantite de produit :\n");
-        scanf("  %d", &quan);
-
-
-    default:
-        break;
+        switch(n3){
+          case 1 :
+             printf("\n\t\t recherche par code");
+            //il faut maintenent faire un fonction qui fait la recherche par code
+            recherchParCode();
+            break;
+          case 2 :
+            printf("\n\t\t recherche par quantite ");
+            recherchParQuantite();
+            //il faut maintenent faire un fonction qui fait la recherche par quantite
+            break;
+        }
     }
+
+    void recherchParCode(){
+
+    }
+
+    void recherchParQuantite(int quantite){
+        int z, q;
+        for (int i = 0; i < incrementer; i++)
+        {
+            if (tableGeneral[i].quantiteProduit == q)
+            {
+                printf("Le nom de produit est      %s", tableGeneral[i].nomProduit);
+                printf("Le prix de produit est     %d", tableGeneral[i].prixProduit);
+                printf("La quantite de produit est %f", tableGeneral[i].quantiteProduit);
+                printf("Le prixTTC de produit est  %f", tableGeneral[i].prixTTC);
+            }else
+
+                z++;
+        }
+        if (z == incrementer)
+            printf("cette quantite ne ce trouve pas dans le stock ? ");
 }
-
-
-
-
-
-
 
 
 

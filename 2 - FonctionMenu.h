@@ -34,22 +34,7 @@
                     break;
 
                 case 4 :
-                    do{
-                    printf("\n\t\tRechercher les produits Par :  \n\n\t\t1. Code\n\t\t2. Quantite\n");
-                    scanf("%d", &n3);
-                    }while(n3 < 0 || n3 > 3);
-
-                     switch(n3)
-                     {
-                         case 1 :
-                             printf("\n\t\trecherche par code");
-                            //il faut maintenent faire un fonction qui fait la recherche par code
-                            break;
-                         case 2 :
-                            printf("\n\t\trecherche par quantite ");
-                            //il faut maintenent faire un fonction qui fait la recherche par quantite
-                            break;
-                     }
+                    rechercherPrduit();
                      retourAuMenu();
                     break;
 
@@ -57,7 +42,6 @@
                     //afficher les produits dont la quantité est inférieure à 3.
                    // etatDuStock();
                     printf("\n\t\ttest");
-
                     retourAuMenu();
                     break;
 
@@ -102,11 +86,10 @@
                     Menu();
                     break;
 
-               /* case 2:
+                case 2:
                     printf("Vous avez quitter !!");
-                    break;*/
+                    break;
                 default :
-                    printf("Vous avez quitter !!");
                     break;
             }
      }

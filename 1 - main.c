@@ -18,13 +18,6 @@ int main()
     int a, b;
     Menu();
 
-   //choisiQuelAjoue();
-    //ajouterProduit();
-    //ajouterPlusieursProduits();
-    //ordreAlphabetiqueCroissant();
-    //orderDecroissantPrix();
-    //ordreOfListe();
-    //acheterProduit(int a, int b);
     retourAuMenu();
     return 0;
 }
