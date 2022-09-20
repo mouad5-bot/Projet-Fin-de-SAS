@@ -1,5 +1,4 @@
 
-    void retourAuMenu();
 
     void Menu(){
         int num;
@@ -27,6 +26,7 @@
                 case 2 :     //  N.B :  chaque produit à un Prix TTC = Prix + 15% du prix
                      ordreOfListe();
                      retourAuMenu();
+                     break;
 
                 case 3 :   // N.B :Pour chaque produit acheté, vous devez enregistrer le prix TTC et la date d’achat.
                     acheterProduit();
@@ -40,21 +40,21 @@
 
                 case 5 :
                     //afficher les produits dont la quantité est inférieure à 3.
-                   // etatDuStock();
-                    printf("\n\t\ttest");
+                    etatDuStock();
+
                     retourAuMenu();
                     break;
 
                 case 6 ://misea jour les quantites apres avoir recharger le stock
                     printf("\n\t\tfaire la mise a jour de stock");
-                    //AlimenterStock();
+                    AlimenterStock();
 
                     retourAuMenu();
                     break;
 
                 case 7 : //supprimer les produits
                     printf("\n\t\t Supprimer les produits par: Code");
-                    //suppProduit();
+                    suppProduit();
                     retourAuMenu();
                     break;
 
@@ -87,7 +87,7 @@
                     break;
 
                 case 2:
-                    printf("Vous avez quitter !!");
+                    printf("Vous asvez quitter !!");
                     break;
                 default :
                     break;
