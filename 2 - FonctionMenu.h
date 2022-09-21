@@ -52,7 +52,6 @@
                     break;
 
                 case 7 : //supprimer les produits
-                    printf("\n\t\t Supprimer les produits par: Code");
                     suppProduit();
                     retourAuMenu();
                     break;

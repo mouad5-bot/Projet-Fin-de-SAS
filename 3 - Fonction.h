@@ -172,15 +172,15 @@
           produitA.date = localtime(&t); //localtime est un fonction predefinie en time
 
           tableDachat[incrementerAchat++] = produitA;
-          printf("\nbien enregistrer !");
+          printf("\nbien enregistrer ! \n");
     }
 
 
 
     void afficheAchat(){
 
-        printf("voici le prixTTC de ce produit  :%f", tableDachat[0].prixTTC);
-        printf("voici la date D'achat de ce produit  %d:%d", tableDachat[0].date->tm_hour, tableDachat[0].date->tm_min );
+        printf("voici le prixTTC de ce produit  :%f\n", tableDachat[0].prixTTC);
+        printf("voici la date D'achat de ce produit  %d:%d\n", tableDachat[0].date->tm_hour, tableDachat[0].date->tm_min );
     }
 //------------------------------- Rechercher les produits -------------------------------
     void rechercherPrduit(){
@@ -277,7 +277,23 @@
 //---------------------------- Supprimer les produits --------------------------------
 
    void suppProduit(){
+       printf("Choisissez l'indice de produit que vous souhaitez  supprimer :\n\n" );
+      int i,j;
+      for (i=0; i<incrementer; i++){
+        printf("\t\t L'indice  de produit est   %d\n", i);
+        printf("\t\t Le code de produit est     %d\n", tableGeneral[i].codeProduit);
+        printf("\t\t Le nom de produit est      %s\n", tableGeneral[i].nomProduit);
+        printf("\t\t La quantite de produit est %d\n", tableGeneral[i].quantiteProduit);
+        printf("\n-------------------------------------------------------------------\n");
+      }
+      printf("Entrer l'indice de produit  que vous voulez supprimer :");
+      scanf("%d", &i);
+      for (j=i; j<incrementer; j++){
+        tableGeneral[j] = tableGeneral[j+1];
 
+      }
+      incrementer--;
+      printf("le produit a  bien ete supprimer !");
     }
 
 //---------------------------- affichage ---------------------------------------------
