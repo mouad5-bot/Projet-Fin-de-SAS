@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include "ProtoType.h"
 #include "2 - FonctionMenu.h"
 #include "4 - structure.h"

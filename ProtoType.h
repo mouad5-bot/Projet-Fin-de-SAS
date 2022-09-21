@@ -2,6 +2,12 @@
 
     void retourAuMenu    ();
     void Menu            ();
-    void retourAuMenu    ();
-
+    void choisiQuelAjoue ();
+    void rdreOfListe     ();
+    void acheterProduit  ();
+    void rechercherPrduit();
+    void etatDuStock     ();
+    void AlimenterStock  ();
+    void suppProduit     ();
+    void afficheAchat    ();
 
